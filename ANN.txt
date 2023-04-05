@@ -1,0 +1,15 @@
+dataTN=xlsread('training.csv');
+>> dataTT=xlsread('testing.csv');
+trainip=dataTN(:,1:11);
+>> trainop=dataTN(:,12);
+>> testip=dataTT(:,1:11);
+>> testop=dataTT(:,12);
+output=output';
+output=round(output);
+op=sim(Ann,testip');
+>> op=op';
+>> Test_error=abs(sum([testop-op])/(numel(testop)));
+>> Test_error
+>> Test_Acc=1-Test_error;
+>> Test_Acc
+
